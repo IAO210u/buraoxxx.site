@@ -1,0 +1,42 @@
+{{ if or .Params.socialShare (and .Site.Params.socialShare (ne .Params.socialShare false)) }}
+<!-- Social Share Button HTML -->
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      <!-- Twitter -->
+      <li>
+        <a href="//twitter.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via={{ .Site.Author.twitter }}" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      <!-- Facebook -->
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      <!-- Reddit -->
+      <li>
+        <a href="//reddit.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      <!-- LinkedIn -->
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      <!-- Zhihu -->
+      <li>
+        <a href="//www.zhihu.com" target="_blank" title="Share on Zhihu">
+          <i class="fab fa-zhihu"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  {{ end }}
+<!-- fontawesome已经预先对许多频道进行了配置，查看是否有要加的频道：fa- -->
